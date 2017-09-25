@@ -3,7 +3,6 @@ const path = require("path");
 const router = express.Router();
 
 router.use(function timeLog(req, res, next) {
-	console.log("req originalUrl: ", req.originalUrl);
 	console.log("Time: ", Date.now());
 	next();
 });
@@ -20,7 +19,7 @@ router.get("/", function(req, res) {
 	res.sendFile(path.join(__dirname, "../app", "index.html"));
 });
 
-router.get("/favicon5.ico", function(req, res) {
+router.get("/favicon.ico", function(req, res) {
 	res.sendFile(path.join(__dirname, "../app", "assets", "images", "favicon5.ico"));
 });
 
